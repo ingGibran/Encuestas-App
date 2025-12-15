@@ -10,34 +10,34 @@ import modelos.Encuesta;
 import modelos.Respuesta;
 
 public class ResultadosEncuestaSimpleAdminFrame extends javax.swing.JFrame {
-        
-        private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ResultadosEncuestaSimpleAdminFrame.class.getName());
+
+        private static final java.util.logging.Logger logger = java.util.logging.Logger
+                        .getLogger(ResultadosEncuestaSimpleAdminFrame.class.getName());
         public Encuesta encuesta;
         public String usuario;
-        
+
         private RespuestaService respuestaService = new RespuestaService();
         private PreguntaService preguntaService = new PreguntaService();
         private EncuestaService encuestaService = new EncuestaService();
         private UsuarioService usuarioService = new UsuarioService();
-        
+
         public ResultadosEncuestaSimpleAdminFrame(Encuesta encuesta, String usuario) {
                 initComponents();
-                
+
                 this.encuesta = encuesta;
                 this.usuario = usuario;
-                
-                lblNombre.setText( encuesta.getNombre() );
-                
+
+                lblNombre.setText(encuesta.getNombre());
+
                 actualizarEncuesta();
-                
+
                 setLocationRelativeTo(null);
-                
+
         }
-        
-        
 
         @SuppressWarnings("unchecked")
-        // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+        // <editor-fold defaultstate="collapsed" desc="Generated
+        // Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
                 jLabel1 = new javax.swing.JLabel();
@@ -73,23 +73,25 @@ public class ResultadosEncuestaSimpleAdminFrame extends javax.swing.JFrame {
                 javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
                 jPanel1.setLayout(jPanel1Layout);
                 jPanel1Layout.setHorizontalGroup(
-                        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lblNombre)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 758, Short.MAX_VALUE)
-                                .addComponent(btnCancelar)
-                                .addGap(53, 53, 53))
-                );
+                                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addComponent(lblNombre)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                                                758, Short.MAX_VALUE)
+                                                                .addComponent(btnCancelar)
+                                                                .addGap(53, 53, 53)));
                 jPanel1Layout.setVerticalGroup(
-                        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(btnCancelar)
-                                        .addComponent(lblNombre))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                );
+                                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addGroup(jPanel1Layout.createParallelGroup(
+                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                                .addComponent(btnCancelar)
+                                                                                .addComponent(lblNombre))
+                                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE)));
 
                 jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -99,61 +101,78 @@ public class ResultadosEncuestaSimpleAdminFrame extends javax.swing.JFrame {
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
                 layout.setHorizontalGroup(
-                        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2)
-                );
+                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jScrollPane2));
                 layout.setVerticalGroup(
-                        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 657, Short.MAX_VALUE))
-                );
+                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(jLabel1)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(jPanel1,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(jScrollPane2,
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                657, Short.MAX_VALUE)));
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-        private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-                new MenuUsuarioFrame( usuario ).setVisible(true);
+        private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnCancelarActionPerformed
+                new MenuUsuarioFrame(usuario).setVisible(true);
                 this.dispose();
-        }//GEN-LAST:event_btnCancelarActionPerformed
+        }// GEN-LAST:event_btnCancelarActionPerformed
 
         public void actualizarEncuesta() {
-System.out.println("hola");
-System.out.println(encuesta.getId_encuesta() + " - " + usuario);
-                String id_usuario = "";
-                try {
-                        id_usuario = usuarioService.getIdUsuarioPorNombre(usuario);
-                } catch (Exception ex) {
-                        System.getLogger(ResultadosEncuestaSimpleAdminFrame.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
-                }
+                System.out.println("Cargando respuestas para encuesta: " + encuesta.getId_encuesta());
 
                 preguntasPanel.removeAll();
                 int indices = 0;
+
                 try {
-                for (Respuesta respuesta : respuestaService.getRespuestasPorEncuestaYUsuario( encuesta.getId_encuesta(), id_usuario ) ) {
-                        
-System.out.println(respuesta.getValor());
-                        
-                        RespuestasEncuestaSimpleAdminPanel panel = new RespuestasEncuestaSimpleAdminPanel(indices, respuesta, this);
-                        preguntasPanel.add( panel );
-                        indices++;
-                }
-                } catch(Exception e) {
+                        // Obtener todas las preguntas de la encuesta
+                        for (modelos.Pregunta pregunta : preguntaService
+                                        .getPreguntasPorEncuesta(encuesta.getId_encuesta())) {
+                                // Para cada pregunta, obtener todas las respuestas
+                                java.util.List<Respuesta> respuestas = respuestaService
+                                                .getRespuestasPorPregunta(pregunta.getId_pregunta());
+
+                                // Mostrar cada respuesta
+                                for (Respuesta respuesta : respuestas) {
+                                        System.out.println("Pregunta: " + pregunta.getTexto() + " - Valor: "
+                                                        + respuesta.getValor());
+                                        RespuestasEncuestaSimpleAdminPanel panel = new RespuestasEncuestaSimpleAdminPanel(
+                                                        indices, respuesta, this);
+                                        preguntasPanel.add(panel);
+                                        indices++;
+                                }
+                        }
+
+                        if (indices == 0) {
+                                javax.swing.JLabel noDataLabel = new javax.swing.JLabel(
+                                                "No hay respuestas registradas para esta encuesta.");
+                                noDataLabel.setFont(new java.awt.Font("Liberation Sans", java.awt.Font.PLAIN, 24));
+                                noDataLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                                preguntasPanel.add(noDataLabel);
+                        }
+
+                } catch (Exception e) {
                         e.printStackTrace();
-                        JOptionPane.showMessageDialog(null, "Error al leer la encuesta");
+                        javax.swing.JOptionPane.showMessageDialog(null, "Error al leer las respuestas de la encuesta");
                 }
-                
-                preguntasPanel.revalidate(); 
-                preguntasPanel.repaint(); 
+
+                preguntasPanel.revalidate();
+                preguntasPanel.repaint();
         }
-        
-        
-        
+
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton btnCancelar;
         private javax.swing.JLabel jLabel1;
