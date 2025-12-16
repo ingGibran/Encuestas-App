@@ -9,9 +9,6 @@ import org.apache.hc.client5.http.fluent.Request;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 
-// ELIMINAR: import com.mycompany.encuestas_app.DatabaseConnection;
-// ELIMINAR: import java.sql.*;
-
 /**
  *
  * @author alexpy
@@ -20,7 +17,6 @@ public class PreguntaService {
     
     private final String urlBase = "http://localhost/tap/encuestas_app/end_point_preguntas.php?option="; 
     
-    // ELIMINAR: private DatabaseConnection db = new DatabaseConnection();
 
     
     public List<Pregunta> getPreguntasPorEncuesta(String id_encuesta) throws Exception {
@@ -69,7 +65,6 @@ public class PreguntaService {
             return null;
         }
         
-        // El endpoint devuelve un solo objeto JSON
         Gson gson = new Gson();
         pregunta = gson.fromJson(results, Pregunta.class);
 

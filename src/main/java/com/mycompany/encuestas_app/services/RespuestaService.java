@@ -9,14 +9,11 @@ import org.apache.hc.client5.http.fluent.Request;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 
-// ELIMINAR: import com.mycompany.encuestas_app.DatabaseConnection;
-// ELIMINAR: import java.sql.*;
 
 public class RespuestaService {
         
     private final String urlBase = "http://localhost/tap/encuestas_app/end_point_respuestas.php?option="; 
         
-    // ELIMINAR: private DatabaseConnection db = new DatabaseConnection();
         
     public Respuesta getRespuestaPorPreguntaYUsuario(String id_pregunta, String id_usuario) throws Exception {
         Respuesta respuesta = null;
@@ -36,7 +33,6 @@ public class RespuestaService {
             return null;
         }
         
-        // El endpoint devuelve un solo objeto JSON
         Gson gson = new Gson();
         respuesta = gson.fromJson(results, Respuesta.class);
 
@@ -75,8 +71,6 @@ public class RespuestaService {
        
     public boolean agregarRespuesta(Respuesta respuesta) throws Exception {
         
-        // El modelo Respuesta.java en tu proyecto contiene la lógica de validación (valor 1-5)
-        // La validación también se agregó al servicio PHP como respaldo.
         if (respuesta.getValor() < 1 || respuesta.getValor() > 5) {
             throw new IllegalArgumentException("El valor de la respuesta debe estar entre 1 y 5");
         }
